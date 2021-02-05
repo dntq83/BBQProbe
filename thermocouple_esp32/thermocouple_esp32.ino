@@ -1,13 +1,14 @@
 #include <WiFi.h>
 #include "max6675.h" //todo: move to global install?
 
-const char* ssid     = "ssid_here";
-const char* password = "pass_here";
+char ssid[] = "";
+const char* password = "";
 
 unsigned long t_prev;
 
 WiFiServer server(80);
 
+int LED_BUILTIN=13;
 int thermoDO = 21;
 int thermoCS = 19;
 int thermoCLK = 18; //NOTE: pin 13 is built in LED, may be problematic with teensy!
