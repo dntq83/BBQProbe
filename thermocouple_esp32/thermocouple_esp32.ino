@@ -8,6 +8,15 @@ unsigned long t_prev;
 
 WiFiServer server(80);
 
+// Set your Static IP address
+// IPAddress local_IP(192, 168, 1, 6);
+// IPAddress subnet(255, 255, 255, 0);
+// IPAddress gateway(192, 168, 1, 1);
+
+// IPAddress primaryDNS(8, 8, 8, 8);   //optional
+// IPAddress secondaryDNS(8, 8, 4, 4); //optional
+
+
 int LED_BUILTIN=13;
 int thermoDO = 21;
 int thermoCS = 19;
@@ -24,6 +33,11 @@ int gndPin = 2;
 void setup() {
 
   Serial.begin(115200);
+  
+  // Configures static IP address
+ // if (!WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS)) {
+ //   Serial.println("STA Failed to configure");
+ // }
 
   pinMode(LED_BUILTIN, OUTPUT); //LED
   Serial.println();
